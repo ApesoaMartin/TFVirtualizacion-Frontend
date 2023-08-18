@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
     <link rel='stylesheet' type='text/css' href='/css/main.css'>
     <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src='/js/config.js'></script>
     <script src='/js/main.js'></script>
 </head>
 
@@ -55,7 +56,9 @@
 
 
     <main class="container p-5">
-        
+        <div id="connectionMessage">
+
+        </div>
     </main>
     <footer class="mt-auto bg-primary">
         <div class="container ">
@@ -65,5 +68,18 @@
         </div>
     </footer>
 </body>
+
+<template id="connect_success">
+    <div class="alert alert-success" role="alert">
+        Conexión exitosa!
+    </div>
+</template>
+<template id="connect_error">
+    <div class="alert alert-danger" role="alert">
+        Conexión rechazada
+    </div>
+</template>
+
+<script src='/js/main_post.js'></script>
 
 </html>
