@@ -23,3 +23,7 @@ body {
 textarea{
     resize: none;
 }
+
+.arquitectura{
+    height: 400px;
+}

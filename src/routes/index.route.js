@@ -13,8 +13,6 @@ async function fetchJSON(url) {
     return result;
 }
 
-
-
 router.get('/personal', async (req,res)=>{
     try{
         res.render("personal", await fetchJSON('/about'));
@@ -24,13 +22,17 @@ router.get('/personal', async (req,res)=>{
     }
 });
 
-router.get('/', async (req, res)=>{
+router.get('/index', async (req, res)=>{
     try{
-        res.render("index", await fetchJSON('/ping'));
+        res.render("index", await fetchJSON('/info/Principal'));
     }catch (err){
         console.log(err);
         res.render("error", err);
     }
+});
+
+router.get('/', (req, res)=>{
+    res.redirect('/index');
 });
 
 export default router;
