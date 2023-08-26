@@ -1,5 +1,28 @@
-<h1>Desarrollo del trabajo final</h1>
-
-{{#each data.articulos}}
-    {{>articulo data=this}}
-{{/each}}
+<div class="container-fluid ">
+    <div class="row">
+        <div class="card col-12">
+            <div class="row p-4">
+                <div class="col-2">
+                    <img src="/resources/foto.png" height="150px"/>
+                </div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="mx-auto">
+                            <h3 class="text-center">{{data.articulos.0.titulo}}</h3>
+                        </div>
+                    </div>
+                    {{#each data.articulos.0.contenido}}
+                        <div class="row">
+                            <p class="{{clase}}">{{{cuerpo}}}</p>
+                        </div>
+                    {{/each}}
+                    {{#if data.articulos.0.link}}
+                        <div class="row">
+                            <a href={{data.articulos.0.link}}>{{data.articulos.0.linkDisplay}}</a>
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

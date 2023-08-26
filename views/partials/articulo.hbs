@@ -10,12 +10,12 @@
                 <div class="row">
                     <p class="{{clase}}">{{{cuerpo}}}</p>
                 </div>
-                {{#if link}}
-                    <div class="row">
-                        <a href={{link}}>{{linkDisplay}}</a>
-                    </div>
-                {{/if}}
             {{/each}}
+            {{#if data.link}}
+                <div class="row">
+                    <a href={{data.link}}>{{data.linkDisplay}}</a>
+                </div>
+            {{/if}}
         </div>
     </div>
 </div>

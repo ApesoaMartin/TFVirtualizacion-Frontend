@@ -13,18 +13,29 @@ async function fetchJSON(url) {
     return result;
 }
 
-router.get('/personal', async (req,res)=>{
+router.get('/index', async (req,res)=>{
     try{
-        res.render("personal", await fetchJSON('/about'));
+        const data = await fetchJSON('/info/Personal');
+        console.log(data.data.articulos);
+        res.render("index", data);
     }catch (err){
         console.log(err);
         res.render("error", err);
     }
 });
 
-router.get('/index', async (req, res)=>{
+router.get('/desarrollo', async (req, res)=>{
     try{
-        res.render("index", await fetchJSON('/info/Principal'));
+        res.render("desarrollo", await fetchJSON('/info/Desarrollo'));
+    }catch (err){
+        console.log(err);
+        res.render("error", err);
+    }
+});
+
+router.get('/archivos', async (req, res)=>{
+    try{
+        res.render("archivos");
     }catch (err){
         console.log(err);
         res.render("error", err);
